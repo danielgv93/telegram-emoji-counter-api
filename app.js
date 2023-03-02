@@ -6,8 +6,6 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 
-const PORT = process.env.PORT || 3001;
-
 const app = express();
 
 // view engine setup
@@ -37,6 +35,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(PORT, () => console.log(`Serve port at ${PORT}`))
 
 module.exports = app;
